@@ -2,31 +2,45 @@
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 30px 15px 30px;
   border: 1px solid #000000;
+  padding: 10px;
   border-radius: 6px;
   outline: none;
   margin: 10px;
-  width: 250px;
-  height: 300px;
 }
 
 .img {
-  width: 50%;
+  width: 100%;
 }
 
 .newsTitle {
-  color: #ffffff;
-  font-size: 12px;
+  color: #000000;
+  font-size: 15px;
   font-weight: 500;
   font-family: 'Roboto';
 }
 
 .newsDescription {
-  color: #ffffff;
+  color: #000000;
   font-size: 10px;
   font-weight: 500;
   font-family: 'Roboto';
+}
+.btn1 {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.g {
+  color: grey;
+}
+
+.p {
+  color: #000000;
+}
+.a {
+  text-decoration: none;
 }

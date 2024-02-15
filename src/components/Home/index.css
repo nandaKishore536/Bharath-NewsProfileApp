@@ -2,18 +2,21 @@
   background-color: #ffffff;
   min-height: 100vh;
   display: flex;
+  justify-content: center;
 }
 
 .subCon {
   width: 60%;
   display: flex;
+
   flex-direction: column;
+  justify-content: center;
+  margin-right: 300px;
 }
 
 .createCon {
   display: flex;
   padding: 8px;
-  align-self: flex-start;
   margin-top: 20px;
 }
 .input {
@@ -21,7 +24,7 @@
   border: 1px solid #000000;
   outline: none;
   border-radius: 6px;
-  padding: 8px 12px 8px 12px;
+  padding: 15px 20px 15px 20px;
   color: #000000;
   font-family: 'Roboto';
   font-weight: 500;
@@ -44,7 +47,7 @@
 
 .newsCon {
   list-style-type: none;
-  align-items: flex-start;
   display: flex;
+
   flex-wrap: wrap;
 }

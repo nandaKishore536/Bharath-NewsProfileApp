@@ -72,6 +72,17 @@ class Home extends Component {
     }
   }
 
+  bookMarkData = id => {
+    this.setState(prevState => ({
+      dataOfArticles: prevState.dataOfArticles.map(each => {
+        if (each.id === id) {
+          return {...each, isAdded: !each.isAdded}
+        }
+        return each
+      }),
+    }))
+  }
+
   render() {
     const {userPost, dataOfArticles} = this.state
     return (
@@ -86,14 +97,14 @@ class Home extends Component {
               value={userPost}
               onChange={this.onChangeUser}
             />
-            <button type="button" className="btn">
+            <button type="button" className="btn" onClick={this.onTap}>
               Post
             </button>
           </div>
 
           <ul className="newsCon">
             {dataOfArticles.map(each => (
-              <News key={each.id} item={each} />
+              <News key={each.id} item={each} onPress={this.bookMarkData} />
             ))}
           </ul>
         </div>

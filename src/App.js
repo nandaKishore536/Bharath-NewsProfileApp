@@ -1,3 +1,5 @@
+import {Component} from 'react'
+
 import {Route, Switch, Redirect, BrowserRouter} from 'react-router-dom'
 
 import Home from './components/Home/index'
@@ -9,6 +11,8 @@ import Settings from './components/Settings/index'
 import Profile from './components/Profile/index'
 
 import NotFound from './components/NotFound/index'
+
+import DataContext from './context/DataContext'
 
 import './App.css'
 
