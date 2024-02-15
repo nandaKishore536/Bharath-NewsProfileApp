@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 import {FaBookmark} from 'react-icons/fa6'
 
 import {GoHomeFill} from 'react-icons/go'
@@ -5,6 +7,8 @@ import {GoHomeFill} from 'react-icons/go'
 import {IoSettingsSharp} from 'react-icons/io5'
 
 import {FaUser} from 'react-icons/fa'
+
+import './index.css'
 
 import {
   MainContainer,
@@ -16,31 +20,41 @@ import {
 
 const Sidebar = () => (
   <MainContainer>
-    <Name>Bharat News</Name>
+    <Link to="/" className="link">
+      <Name>Bharat News</Name>
+    </Link>
     <ItemContainer>
-      <Item>
-        <SubItemContainer type="button">
-          <GoHomeFill size={45} />
-        </SubItemContainer>
-      </Item>
+      <Link to="/">
+        <Item>
+          <SubItemContainer type="button">
+            <GoHomeFill size={50} />
+          </SubItemContainer>
+        </Item>
+      </Link>
 
-      <Item>
-        <SubItemContainer type="button">
-          <FaBookmark size={45} />
-        </SubItemContainer>
-      </Item>
+      <Link to="/book-mark">
+        <Item>
+          <SubItemContainer type="button">
+            <FaBookmark size={50} />
+          </SubItemContainer>
+        </Item>
+      </Link>
 
-      <Item>
-        <SubItemContainer type="button">
-          <FaUser size={45} />
-        </SubItemContainer>
-      </Item>
+      <Link to="/profile">
+        <Item>
+          <SubItemContainer type="button">
+            <FaUser size={50} />
+          </SubItemContainer>
+        </Item>
+      </Link>
 
-      <Item>
-        <SubItemContainer type="button">
-          <IoSettingsSharp size={45} />
-        </SubItemContainer>
-      </Item>
+      <Link to="/setting">
+        <Item>
+          <SubItemContainer type="button">
+            <IoSettingsSharp size={50} />
+          </SubItemContainer>
+        </Item>
+      </Link>
     </ItemContainer>
   </MainContainer>
 )

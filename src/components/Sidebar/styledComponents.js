@@ -6,7 +6,8 @@ export const MainContainer = styled.div`
  display: flex;
  flex-direction: column;
  width : 40%;
-padding :20px 30px 20p 30px;
+padding :15px;
+position: fixed;
 `
 
 export const Name = styled.h1`

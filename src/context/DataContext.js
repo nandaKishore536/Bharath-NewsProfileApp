@@ -1,11 +1,13 @@
 import React from 'react'
 
-const CartContext = React.createContext({
+const DataContext = React.createContext({
   userPost: '',
   newsData: [],
+  BookData: [],
+  getData: () => {},
   changeData: () => {},
   changePost: () => {},
   addNewData: () => {},
 })
 
-export default CartContext
+export default DataContext

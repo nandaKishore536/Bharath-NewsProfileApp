@@ -1,161 +1,63 @@
-In this project, let's fix the **IPL Dashboard** by applying the concepts we have learned till now.
+# NewsProfileApp
 
-### Refer to the image below:
+## Overview
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/ipl-dashboard-output-v2.gif" alt="ipl dashboard output" style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+NewsProfileApp is a user profile page similar to Instagram but for a news application. This profile page allows users to view their personal information, posted articles, and bookmarked or liked news stories. The application is built using React, React Router, and a CSS framework like Bootstrap, emphasizing user experience and interface design.
 
-### Set Up Instructions
+## Prerequisites
 
-<details>
-<summary>Click to view</summary>
+- Basic understanding of JavaScript and React concepts (components, state, props)
+- Familiarity with React for web development
+- Basic knowledge of React Router for navigation between screens
+- Understanding of CSS frameworks like Bootstrap or Tailwind CSS for styling and layout
 
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
-</details>
+## Project Setup
 
-### Completion Instructions
+1. Initialize a new React project named NewsProfileApp.
+2. Install React Router for managing navigation between pages.
+3. Choose a CSS framework like Bootstrap or Tailwind CSS for styling.
 
-<details>
-<summary>Functionality to be fixed</summary>
-<br/>
+## Profile Page Design
 
-Fix the given code to have the following functionality
+- User Information Section: Display the user's avatar, name, and a short bio. Use appropriate HTML elements and CSS classes for styling.
+- Tabs for Content Organization: Implement tabs or segmented controls to separate the user's posted news articles and their bookmarked/liked stories. Use React Router for page navigation or a tab component from a CSS framework.
+- News Cards: For each article under the posted and bookmarked sections, display a card with the article's title, an excerpt, and a thumbnail image. Use appropriate HTML and CSS for the card layout.
+- Settings Icon: Include an icon that navigates to a settings page (the settings page implementation is beyond this assignment's scope but prepare the navigation).
 
-- When the app is opened, Home Route should be displayed
-- When the Home Route is opened,
-  - Make HTTP GET request to the **teamsApiUrl**
-  - **_loader_** should be displayed while fetching the data
-  - After fetching the data, the list of teams should be displayed
-- When a team card in Home Route is clicked,
-  - Page should be navigated to the Team Matches Route with the URL `/team-matches/:id`
-- When the Team Matches Route is opened,
-  - Make HTTP GET request to the **teamMatchesApiUrl** with the team id to get the recent matches data of the team
-    - Example: `https://apis.ccbp.in/ipl/KKR`
-  - **_loader_** should be displayed while fetching the data
-  - After fetching the data, the team banner, latest match, and list of recent matches should be displayed
+## Functionality
 
-</details>
+- Navigation: Use React Router to move between the profile page and other dummy pages (e.g., a home page and a settings page) to demonstrate navigation capability.
+- Mock Data: Since the focus is on the UI, you can use static data to represent the user information and articles. Create a JSON file with dummy data that includes user information and a list of articles.
 
-<details>
+## Styling
 
-<summary>API Requests & Responses</summary>
-<br/>
+- Use CSS to style your application, including layout, colours, typography, etc.
+- Customize the appearance of your tabs and cards to mimic a modern news application. You may choose a colour scheme that suits a new context.
 
-**teamsApiUrl**
+## Extra Challenges (Optional)
 
-#### API: `https://apis.ccbp.in/ipl`
+- Implement a dark mode toggle in the settings screen and apply dark mode styles throughout the profile page.
+- Use an API like NewsAPI to fetch real news articles instead of using static data, displaying them in the posted and bookmarked tabs.
 
-#### Method: `GET`
+## Deliverables
 
-#### Description:
+- Source code of the NewsProfileApp project, including all the React code, assets, and any additional libraries used.
+- A README file with instructions on how to run the application, a brief description of the project, and screenshots of the profile page.
+- Ensure the application is responsive and looks appealing on different screen sizes and devices.
 
-Returns a response containing the list of all IPL teams
+## Evaluation Criteria
 
-#### Response
+- Functionality: The app runs without errors, and all requirements are met.
+- Code Quality: Code is well-organized, commented, and follows best practices.
+- UI/UX Design: The profile page is user-friendly, visually appealing, and provides a smooth navigation experience.
+- Creativity and Effort: Demonstrated through additional features, UI design, and how effectively CSS framework components are utilised.
 
-```json
-{
-  "teams": [
-    {
-      "name": "Royal Challengers Bangalore",
-      "id": "RCB",
-      "team_image_url": "https://assets.ccbp.in/frontend/react-js/rcb-logo-img.png",
-      // use value of the key 'name' for alt as `${name}`
-    },
-    ...
-  ],
-}
+## Submission Guidelines
+
+- Submit your project by pushing the code to a GitHub repository and share the link via email at hiring@thebharat.news.
+- Ensure the repository is public or shared with your instructor.
+- Include any setup instructions or prerequisites in the README file.
+
 ```
 
-**teamMatchesApiUrl**
-
-#### API: `https://apis.ccbp.in/ipl/:id`
-
-#### Example: `https://apis.ccbp.in/ipl/KKR`
-
-#### Method: `GET`
-
-#### Description:
-
-Returns a response containing details of all recent matches of a team
-
-#### Response
-
-```json
-{
-  "team_banner_url": "https://assets.ccbp.in/frontend/react-js/kkr-team-img.png",
-  "latest_match_details": {
-    "umpires": "CB Gaffaney, VK Sharma",
-    "result": "Kolkata Knight Riders Won by 7 wickets",
-    "man_of_the_match": "Shubman Gill",
-    "id": "1216545",
-    "date": "2020-09-26",
-    "venue": "At Sheikh Zayed Stadium, Abu Dhabi",
-    "competing_team": "Sunrisers Hyderabad",
-    "competing_team_logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/81/Sunrisers_Hyderabad.svg/1200px-Sunrisers_Hyderabad.svg.png",
-    // use value of the key 'competing_team' for alt as `latest match ${competing_team}`
-    "first_innings": "Sunrisers Hyderabad",
-    "second_innings": "Kolkata Knight Riders",
-    "match_status": "Won",
-  },
-  "recent_matches": [
-    {
-      "umpires": "RK Illingworth, K Srinivasan",
-      "result": "Royal Challengers Bangalore Won by 82 runs",
-      "man_of_the_match": "AB de Villiers",
-      "id": "1216540",
-      "date": "2020-10-12",
-      "venue": "At Sharjah Cricket Stadium, Sharjah",
-      "competing_team": "Royal Challengers Bangalore",
-      "competing_team_logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/Royal_Challengers_Bangalore_2020.svg/1200px-Royal_Challengers_Bangalore_2020.svg.png",
-      // use value of the key 'competing_team' for alt as `competing team ${competing_team}`
-      "first_innings": "Royal Challengers Bangalore",
-      "second_innings": "Kolkata Knight Riders",
-      "match_status": "Lost",
-    },
-    ...
-  ],
-}
 ```
-
-</details>
-
-### Quick Tips
-
-<details>
-<summary>Click to view</summary>
-<br>
-
-- There are `13` bugs to be fixed to achieve the functionality and the UI that is expected
-
-</details>
-
-### Important Note
-
-<details>
-<summary>Click to view</summary>
-
-<br/>
-
-**The following instructions are required for the tests to pass**
-
-- Wrap the `Loader` component with an HTML container element and add the `data-testid` attribute value as `loader` to it as shown below
-
-  ```jsx
-  <div data-testid="loader">
-    <Loader type="Oval" color="#ffffff" height={50} width={50} />
-  </div>
-  ```
-
-</details>
-
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - Don't change the component folder names as those are the files being imported into the tests.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
