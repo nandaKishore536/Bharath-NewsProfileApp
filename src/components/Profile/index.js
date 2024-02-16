@@ -1,5 +1,7 @@
 import {FaRegCircleUser} from 'react-icons/fa6'
 
+import Sidebar from '../Sidebar'
+
 import './index.css'
 
 const user = {
@@ -10,6 +12,7 @@ const user = {
 
 const Profile = () => (
   <div className="userBg">
+    <Sidebar />
     <div className="subCon">
       <FaRegCircleUser size={100} />
       <h1 className="userH1">{user.name}</h1>

@@ -22,7 +22,6 @@ class App extends Component {
   state = {
     userPost: '',
     newsData: [],
-    Book: [],
   }
 
   componentDidMount() {
@@ -53,9 +52,6 @@ class App extends Component {
   }
 
   changeData = id => {
-    const {newsData} = this.state
-    const x = newsData.filter(each => each.id === id)
-
     this.setState(prevState => ({
       newsData: prevState.newsData.map(each => {
         if (each.id === id) {
@@ -63,7 +59,6 @@ class App extends Component {
         }
         return each
       }),
-      Book: [...prevState.Book, x],
     }))
   }
 
@@ -88,14 +83,13 @@ class App extends Component {
   }
 
   render() {
-    const {userPost, newsData, Book} = this.state
+    const {userPost, newsData} = this.state
 
     return (
       <DataContext.Provider
         value={{
           userPost,
           newsData,
-          BookData: Book,
           getData: this.getData,
           changeData: this.changeData,
           changePost: this.changePost,

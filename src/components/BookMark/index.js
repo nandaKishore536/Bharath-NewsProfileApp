@@ -11,15 +11,9 @@ import './index.css'
 const BookMark = () => (
   <DataContext.Consumer>
     {value => {
-      const {BookData, changeData} = value
+      const {newsData, changeData} = value
 
-      const NewData = (
-        <ul className="newsCon">
-          {BookData.map(each => (
-            <News key={each.id} item={each} onPress={changeData} />
-          ))}
-        </ul>
-      )
+      const x = newsData.filter(each => each.isAdded === true)
 
       return (
         <div className="mainCon">
@@ -27,8 +21,12 @@ const BookMark = () => (
           <div className="subCon">
             <Post />
 
-            {BookData.length !== 0 ? (
-              NewData()
+            {x.length !== 0 ? (
+              <ul className="newsCon">
+                {x.map(each => (
+                  <News key={each.id} item={each} onPress={changeData} />
+                ))}
+              </ul>
             ) : (
               <img
                 src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-saved-videos-img.png"
